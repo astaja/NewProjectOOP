@@ -13,11 +13,20 @@ import Models.Helper;
 import java.time.Duration;
 
 public class FirstTests {
-//    public static WebDriver driver;
 
     @BeforeMethod
     public void beforeMethod() {
         Helper.driver.get("https://sutarta.lt/redaguoti/baldai-interjeras/baldai-namams/miegamojo-baldai/dvigules-lovos");
+//        Helper.driver.findElement(By.id("contacts_name")).clear();
+//        Helper.driver.findElement(By.id("contacts_email")).clear();
+//        Helper.driver.findElement(By.id("contacts_phone")).clear();
+//        Helper.driver.findElement(By.id("width")).clear();
+//        Helper.driver.findElement(By.id("length")).clear();
+//        Helper.driver.findElement(By.id("fk_place_cities_id[]")).clear();
+//        Helper.driver.findElement(By.id("title_lt")).clear();
+//        Helper.driver.findElement(By.id("comments_lt")).clear();
+//        Helper.driver.findElement(By.id("sell_price_eur")).clear();
+//        Helper.driver.findElement(By.id("video_url")).clear();
     }
 
     @AfterMethod
@@ -30,18 +39,13 @@ public class FirstTests {
         Helper.driver = new ChromeDriver();
         Helper.driver.manage().window().maximize();
         Helper.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        acceptCookies();
+        Helper.acceptCookies();
     }
 
     @AfterClass
     public void afterClass() {
         Helper.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         Helper.driver.quit();
-    }
-
-    public void acceptCookies() {
-        Helper.driver.get("https://sutarta.lt/");
-        Helper.driver.findElement(By.id("onetrust-accept-btn-handler")).click();
     }
 
 //    @Test
@@ -72,7 +76,7 @@ public class FirstTests {
     public void secondTest() {
         Register r = new Register("nicename", "uvdeve@gmail.com", "+37060000000", "super nice",
                 "nice color", "3456", "1234", "Vilnius", "short title", "long description",
-                "900000");
+                "900000", "superpassword");
         r.fill();
     }
 }
