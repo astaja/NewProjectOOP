@@ -33,7 +33,7 @@ public class FirstTests {
     @AfterMethod
     public void afterMethod() {
         Helper.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-    }
+    } // delete
 
     @BeforeClass
     public void beforeClass() {

@@ -44,7 +44,6 @@ public class Register {
         driver.findElement(By.id("contacts_name")).sendKeys(this.name);
         driver.findElement(By.id("contacts_email")).sendKeys(this.email);
         driver.findElement(By.id("contacts_phone")).sendKeys(this.phone);
-        allSelects();
 //        selectCondition();
 //        selectColor();
         driver.findElement(By.id("width")).sendKeys(this.width);
@@ -55,6 +54,7 @@ public class Register {
         driver.findElement(By.id("sell_price_eur")).sendKeys(this.price);
         driver.findElement(By.id("video_url")).sendKeys("https://www.youtube.com/watch?v=AfKZclMWS1U&pp=ygUOZ3plZ296IHlvdXR1YmU%3D&ab_channel=trouchelle");
         driver.findElement(By.xpath("//*[@id=\"main_form\"]/div[3]/div/input")).click();
+        allSelects(); // all selects put to the end of the test, due to avoid condition dropdown making tests fail
 //        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys(this.password);
 //        driver.findElement(By.className("submit-button")).click();
     }
